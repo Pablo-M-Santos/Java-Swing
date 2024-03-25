@@ -1,7 +1,10 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Section2  extends JFrame {
     private JPanel section2;
+    private JButton sair;
 
     public Section2() {
         setContentPane(section2);

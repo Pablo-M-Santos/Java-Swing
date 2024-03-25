@@ -3,34 +3,36 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main extends JFrame{
-
-    private JLabel LabelTitle1;
-    private JTextField textField1;
-    private JButton cliqueEmTuButton;
-    private JPanel section1;
-    private JButton criarUmaNovaTelaButton;
+    private JPanel telaDeLogin;
+    private JLabel titulo;
+    private JTextField nome;
+    private JPasswordField password;
+    private JButton cancelar;
+    private JLabel usuario;
+    private JLabel senha;
+    private JButton enviar;
 
 
     public Main() {
-        setContentPane(section1);
+        //Configurações da Janela!
+        setContentPane(telaDeLogin);
         setSize(400,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
 
-        cliqueEmTuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String texto = textField1.getText();
-                LabelTitle1.setText(texto);
-            }
-        });
-
-
-        criarUmaNovaTelaButton.addActionListener(new ActionListener() {
+        // Ir para outra Janela!
+        enviar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Section2();
+            }
+        });
+
+        cancelar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
             }
         });
     }
